@@ -26,7 +26,7 @@ const WelcomePage = (props) => {
               extremely challenging one. It requires a lot of knowledge,
               shrewdness, strenght and wide set of abilities and skills. These
               can vary from econimic to military knowledge, however there are
-              also those that are different to learn. One of such skills is
+              also those that are difficult to learn. One of such skills is
               knowing what's spoken across the Seven Kingdoms. It's important to
               know what whispers the subjects of the crown share before those
               whispers grow into plots!
