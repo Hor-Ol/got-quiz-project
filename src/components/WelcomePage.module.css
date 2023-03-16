@@ -1,0 +1,118 @@
+.welcome-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-page-container {
+  font-size: 16px;
+  text-align: center;
+  padding: 16px 24px;
+  color: #fff;
+}
+
+.welcome-page-wrapper {
+  width: 55%;
+}
+
+.welcome-page-heading {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 0px 16px;
+}
+
+.welcome-page-description {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 24px 0px;
+}
+
+.welcome-button {
+  margin-top: 16px;
+  width: 30%;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1440px) {
+  .welcome-page-wrapper {
+    width: 70%;
+  }
+
+  .welcome-page-heading {
+    font-size: 24px;
+  }
+
+  .welcome-page-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .welcome-page-wrapper {
+    width: 80%;
+  }
+
+  .welcome-page-heading {
+    font-size: 24px;
+  }
+
+  .welcome-page-description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-page-heading {
+    font-size: 20px;
+  }
+
+  .welcome-page-description {
+    font-size: 18px;
+  }
+
+  .welcome-button {
+    margin-top: 16px;
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-page-container {
+    padding: 16px 0px;
+  }
+
+  .welcome-page-heading {
+    font-size: 18px;
+  }
+
+  .welcome-page-description {
+    font-size: 16px;
+  }
+
+  .welcome-button {
+    margin-top: 16px;
+    width: 70%;
+  }
+}
+
+@media (max-width: 465px) {
+  .welcome-page-wrapper {
+    width: 85%;
+  }
+
+  .welcome-page-container {
+    padding: 0px;
+  }
+
+  .welcome-page-heading {
+    font-size: 16px;
+  }
+
+  .welcome-page-description {
+    font-size: 14px;
+  }
+}

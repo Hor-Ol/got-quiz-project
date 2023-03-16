@@ -1,0 +1,10 @@
+html,
+body {
+  margin: 0;
+  font-family: "Cinzel", serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

@@ -1,0 +1,20 @@
+.card {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 2px 8px 0px;
+  border-radius: 25px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1020px) {
+  .card {
+    padding: 16px;
+  }
+}

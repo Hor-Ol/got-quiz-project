@@ -1,0 +1,16 @@
+.quiz-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.quiz-loading,
+.quiz-error {
+  height: 100vh;
+  font-size: 48px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

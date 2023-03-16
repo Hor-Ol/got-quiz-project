@@ -1,0 +1,28 @@
+.answers {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 10px;
+}
+
+.answer-button {
+  width: 90%;
+}
+
+.selected-answer-button {
+  width: 90%;
+  color: rgb(180, 4, 39);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
