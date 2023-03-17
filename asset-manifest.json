@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/got-quiz-project/static/css/main.cee50385.css",
+    "main.js": "/got-quiz-project/static/js/main.ecc68372.js",
+    "static/media/got-background-img.jpg": "/got-quiz-project/static/media/got-background-img.b3e82bec91372c89a8e1.jpg",
+    "static/media/davos-seaworth.jpg": "/got-quiz-project/static/media/davos-seaworth.9992012ac71eae1321e8.jpg",
+    "static/media/theon-greyjoy.jpg": "/got-quiz-project/static/media/theon-greyjoy.afef83756365c87c6c74.jpg",
+    "static/media/cersei-lannister.jpg": "/got-quiz-project/static/media/cersei-lannister.162dde4157005058bada.jpg",
+    "static/media/varys.jpg": "/got-quiz-project/static/media/varys.dd5dd6aba70a884981ae.jpg",
+    "static/media/edmure-tully.jpg": "/got-quiz-project/static/media/edmure-tully.8d358a63cc1cad3f1a68.jpg",
+    "static/media/tyrion-lannister.jpg": "/got-quiz-project/static/media/tyrion-lannister.ab1e5733ee2ac54b87f8.jpg",
+    "static/media/sansa-stark.jpg": "/got-quiz-project/static/media/sansa-stark.dcbfd74b3f33d14f46e9.jpg",
+    "static/media/jon-snow.jpg": "/got-quiz-project/static/media/jon-snow.135daa8887c6351e3fa4.jpg",
+    "static/media/got-transparent-logo.png": "/got-quiz-project/static/media/got-transparent-logo.71e13306acfbc652a314.png",
+    "static/media/melisandre.jpg": "/got-quiz-project/static/media/melisandre.5150acfb6a25075b170f.jpg",
+    "static/media/bran-stark.jpg": "/got-quiz-project/static/media/bran-stark.6aefa448505d2ab7cf90.jpg",
+    "static/media/petyr-bealish.jpg": "/got-quiz-project/static/media/petyr-bealish.7884acb541eeb86cf4a0.jpg",
+    "index.html": "/got-quiz-project/index.html",
+    "main.cee50385.css.map": "/got-quiz-project/static/css/main.cee50385.css.map",
+    "main.ecc68372.js.map": "/got-quiz-project/static/js/main.ecc68372.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cee50385.css",
+    "static/js/main.ecc68372.js"
+  ]
+}
