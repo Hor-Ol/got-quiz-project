@@ -19,4 +19,4 @@ The project was made upon finishing ≈30% of React course and had the goal to s
 ## :mag: Things to Improve
 
 1. The project is using props drilling, however using context could be a better solution.
-2. Improve styles cohesion on small devices with monitor version
+2. Improve styles cohesion for buttons on small devices with monitor version
