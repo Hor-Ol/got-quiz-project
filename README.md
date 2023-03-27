@@ -20,3 +20,4 @@ The project was made upon finishing ≈30% of React course and had the goal to s
 
 1. The project is using props drilling, however using context could be a better solution.
 2. Improve styles cohesion for buttons on small devices with monitor version.
+3. Refactoring and using custom hook e.g. for data fetching in order to make that functionality reusable and not to duplicate code.
