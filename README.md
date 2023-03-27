@@ -8,7 +8,7 @@ On the site user can go through the quiz guessing which character said the quote
 
 ## :dart: Main Goals
 
-The project was made upon finishing ≈30% of React course and had the goal to structure & strengthen the knowledge of the concepts learned, such as states, hooks, CSS modules and working with fetch API. The idea was to practice React fundamentals and key features as well as to get experience with fetching data and working with received data, handling potential errors, etc.
+The project was made upon finishing ≈30% of React course and had the goal to structure & strengthen the knowledge of the concepts learned, such as states, hooks, CSS modules, custom hooks and working with fetch API. The idea was to practice React fundamentals and key features as well as to get experience with fetching data and working with received data, handling potential errors, etc.
 
 ## :wrench: Technologies Used
 
