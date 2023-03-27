@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useState, useMemo } from "react";
+import useFetch from "../hooks/useFetch";
 import QuizList from "./QuizList";
 import styles from "./QuizPage.module.css";
 
@@ -17,98 +18,61 @@ const QuizPage = (props) => {
   const [error, setError] = useState(false);
 
   // ---> STATE & EVENT HANDLERS:
-  // Below is a fetch request that fetches quotes from a Web API
-  const fetchQuotesHandler = useCallback(async () => {
-    try {
-      // Setting isLoading state to "true" as we start receiving the data
-      setIsLoading(true);
+  // Below are handler functions that are used inside custom hooks to transfrom data recieved from API
 
-      // Resetting error state to null to clear any potential error that might have happened earlier
-      setError(null);
+  const transformQuotesHandler = (quotesData) => {
+    // Creating array of fetched quote objects with the information about the quote, author of the quote and quote unique id
+    const transformedQuotes = quotesData.map((quote, index) => {
+      return {
+        sentence: quote.sentence,
+        character: quote.character.name,
+        key: index,
+      };
+    });
 
-      // Fetching initial data from Web API
-      const response = await fetch(
-        "https://api.gameofthronesquotes.xyz/v1/random/10"
-      );
+    // Storing transformed quotes in quotesArray
+    setQuotesArray(transformedQuotes);
+  };
 
-      // Checking the data recieved for potetnial errors during data fetching
-      // If error occurs we're throwing an error and creating our custom error message
-      if (!response.ok) {
-        throw new Error(`Something went wrong. Error: ${response.status}`);
-      }
+  const transformCharactersHandler = (charactersData) => {
+    // Creating array of fetched quote objects with the information about the character and character unique id
+    const tansformedHouses = charactersData.map((house, houseIndex) =>
+      house.members.map((houseCharacter, characterIndex) => ({
+        characterName: houseCharacter.name,
+        id: houseIndex.toString() + characterIndex.toString(),
+      }))
+    );
 
-      // If data are ok we're parsing it
-      const data = await response.json();
+    // Flattening characters array
+    const transformedCharacters = tansformedHouses.flat(1);
 
-      // Creating array of fetched quote objects with the information about the quote, author of the quote and quote unique id
-      const transformedQuotes = data.map((quote, index) => {
-        return {
-          sentence: quote.sentence,
-          character: quote.character.name,
-          key: index,
-        };
-      });
+    // Storing flattened characters array in characters state
+    setCharacters(transformedCharacters);
+  };
 
-      // Storing transformed quotes in quotesArray
-      setQuotesArray(transformedQuotes);
+  // ---> CUSTOM HOOKS
+  // Below are two uses od useFetch Custom Hook to generate fecthing data functions
 
-      // Setting isLoading state to false as we are done with data fetching and editing
-      setIsLoading(false);
-    } catch (error) {
-      setError(error.message);
-    }
-  }, []);
+  const { sendRequest: quotesRequest } = useFetch();
 
-  // Below is a fetch request that fetches characters from Web API
-  const fetchCharactersHandler = useCallback(async () => {
-    try {
-      // Setting isLoading state to "true" as we start receiving the data
-      setIsLoading(true);
-
-      // Resetting error state to null to clear any potential error that might have happened earlier
-      setError(null);
-
-      // Fetching initial data from Web API
-      const response = await fetch(
-        "https://api.gameofthronesquotes.xyz/v1/houses"
-      );
-
-      // Checking the data recieved for potetnial errors during data fetching
-      // If error occurs we're throwing an error and creating our custom error message
-      if (!response.ok) {
-        throw new Error(`Something went wrong. Error: ${response.status}`);
-      }
-
-      // If data are ok we're parsing it
-      const data = await response.json();
-
-      // Creating array of fetched quote objects with the information about the character and character unique id
-      const tansformedHouses = data.map((house, houseIndex) =>
-        house.members.map((houseCharacter, characterIndex) => ({
-          characterName: houseCharacter.name,
-          id: houseIndex.toString() + characterIndex.toString(),
-        }))
-      );
-
-      // Flattening characters array
-      const transformedCharacters = tansformedHouses.flat(1);
-
-      // Storing flattened characters array in characters state
-      setCharacters(transformedCharacters);
-
-      // Setting isLoading state to false as we're done fetching data
-      setIsLoading(false);
-    } catch (error) {
-      setError(error.message);
-    }
-  }, []);
+  const { sendRequest: characterRequest } = useFetch();
 
   // ---> OTHER FUNCTIONS:
-  // With the below function we're running fetchQuotesHandler and fetchCharactersHander once the page is loaded
+  // With the below functions we're running quotesRequest and charactersrequest passing into it urls, transform functions and state updating functions once the page is loaded
   useEffect(() => {
-    fetchQuotesHandler();
-    fetchCharactersHandler();
-  }, [fetchQuotesHandler, fetchCharactersHandler]);
+    quotesRequest(
+      "https://api.gameofthronesquotes.xyz/v1/random/10",
+      transformQuotesHandler,
+      setIsLoading,
+      setError
+    );
+    characterRequest(
+      "https://api.gameofthronesquotes.xyz/v1/houses",
+      transformCharactersHandler,
+      setIsLoading,
+      setError
+    );
+  }, [quotesRequest, characterRequest]);
 
   // -----> JSX <-----
   return (
